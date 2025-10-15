@@ -1,11 +1,9 @@
 import random
 
-choices = ['rock', 'paper', 'scissors']
-
-print("Rock Paper Scissors Game!")
-
-# Bucle principal del juego
-while True:
+def play():
+    choices = ['rock', 'paper', 'scissors']
+    print("\nRock Paper Scissors Game!")
+    
     player = input("Choose (rock/paper/scissors): ").lower()
     computer = random.choice(choices)
 
@@ -23,6 +21,10 @@ while True:
 
     # Preguntar si quiere volver a jugar
     again = input("\nDo you want to play again? (yes/no): ").lower()
-    if again != 'yes':
+    if again == 'yes':
+        play()  # 👈 vuelve a llamar la función y repite el juego
+    else:
         print("Thanks for playing! 👋")
-        break
+
+# Iniciar el juego
+play()
